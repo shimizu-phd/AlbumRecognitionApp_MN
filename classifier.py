@@ -56,7 +56,7 @@ def result():
         image = tf.reshape(image, [1, 224, 224, 3])
 
         # 予測
-        new_model = tf.keras.models.load_model('./my_model_MN.h5')
+        new_model = tf.keras.models.load_model('./saved_model/my_model_MN')
         pred = new_model.predict(image)
         sorted_idx = np.argsort(-pred[0])  # 降順でソート
         result = ""
